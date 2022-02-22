@@ -51,3 +51,97 @@ let arr7 = [6, 4, 7, 9];
 //[4,6];
 
 //indexOf lastIndexOf
+
+//fetch rest api - json
+
+//json
+
+/*
+[
+{
+  "name":"syed",
+   "id":"2"
+},
+{
+  "name":"syed",
+   "id":"2"
+}]
+
+*/
+
+//array and Object
+
+let duplicatesArr = [3, 4, 5, 3, 5, 1, 2, 3];
+
+let obj = {};
+//declarative  , imperative
+for (let i = 0; i < duplicatesArr.length; i++) {
+  if (obj[duplicatesArr[i]] == undefined) {
+    obj[duplicatesArr[i]] = 1;
+  } else {
+    obj[duplicatesArr[i]]++;
+  }
+}
+console.log(obj);
+
+//
+
+let result2 = duplicatesArr.reduce((acc, value) => {
+  if (acc[value] == undefined) {
+    acc[value] = 1;
+  } else {
+    acc[value]++;
+  }
+  return acc;
+}, {});
+console.log(result2);
+
+let result3 = duplicatesArr.reduce((acc, value) => {
+  acc[value] = acc[value] ? acc[value] + 1 : 1;
+  return acc;
+}, {});
+console.log(result3);
+
+
+let user = [
+  {
+    name: "syed",
+    id: 3,
+    city: "hyderabad",
+  },
+  {
+    name: "Vikas",
+    id: 4,
+    city: "hyderabad",
+  },
+  ,
+  {
+    name: "Sharan",
+    id: 5,
+    city: "Banglore",
+  },
+  {
+    name: "Swathi",
+    id:6,
+    city: "Banglore",
+  },
+];
+
+// filter out user belonging to hyderbad 
+///[syed, vikas] //filter and map 
+//{hyderabad :[syed,vikas],bangolre : ["sharan", "swathi"]}
+
+
+let num3 = 1;
+console.log(num3--, num3); //1 , 2
+/*
+obj[3] = 2
+{
+  1:1,
+  2:1,
+  3:3,
+  4:1
+  5:2
+}
+
+*/

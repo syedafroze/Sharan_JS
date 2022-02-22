@@ -51,3 +51,5 @@ class User extends Address {
 
 let newUser = new User("syed", 5, "hyd", "India");
 console.log(newUser);
+
+
