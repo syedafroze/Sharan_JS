@@ -102,7 +102,6 @@ let result3 = duplicatesArr.reduce((acc, value) => {
 }, {});
 console.log(result3);
 
-
 let user = [
   {
     name: "syed",
@@ -122,15 +121,14 @@ let user = [
   },
   {
     name: "Swathi",
-    id:6,
+    id: 6,
     city: "Banglore",
   },
 ];
 
-// filter out user belonging to hyderbad 
-///[syed, vikas] //filter and map 
+// filter out user belonging to hyderbad
+///[syed, vikas] //filter and map
 //{hyderabad :[syed,vikas],bangolre : ["sharan", "swathi"]}
-
 
 let num3 = 1;
 console.log(num3--, num3); //1 , 2
@@ -144,4 +142,39 @@ obj[3] = 2
   5:2
 }
 
+*/
+
+let numArr = [4, 3, 2, 4, 1, 1, 5, 5, 2];
+
+/*
+{
+  1:2,
+  2:2,
+  3:1,
+  4:2,
+  5:2
+}
+*/
+let resObj = {};
+for (let i = 0; i < numArr.length; i++) {
+  if (resObj[numArr[i]]) {
+    resObj[numArr[i]]++;
+  } else {
+    resObj[numArr[i]] = 1;
+  }
+}
+console.log(resObj);
+
+let resObj2 = numArr.reduce((acc, num) => {
+  acc[num] = acc[num] ? ++acc[num] : (acc[num] = 1);
+  return acc;
+}, {});
+console.log(resObj2);
+
+/*
+{
+  4:2,
+  3:2,
+
+}
 */
