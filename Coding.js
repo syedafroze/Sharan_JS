@@ -113,7 +113,6 @@ let user = [
     id: 4,
     city: "hyderabad",
   },
-  ,
   {
     name: "Sharan",
     id: 5,
@@ -125,6 +124,32 @@ let user = [
     city: "Banglore",
   },
 ];
+
+let cities = {};
+
+for (let i = 0; i < user.length; i++) {
+  if (cities[user[i].city]) {
+    cities[user[i].city].push(user[i].name);
+  } else {
+    cities[user[i].city] = [user[i].name];
+  }
+}
+console.log(cities);
+
+let cities2 = user.reduce((cityObj, userObj) => {
+  let { name, city } = userObj;
+  cityObj[city] = cityObj[city] ? cityObj[city].concat(name) : [].concat(name);
+  return cityObj;
+}, {});
+console.log(cities2);
+
+/*
+{}
+cities[user[0].city]= ["syed","vikas"]
+{
+  hyderbad:["syed"]
+}
+*/
 
 // filter out user belonging to hyderbad
 ///[syed, vikas] //filter and map
@@ -177,4 +202,26 @@ console.log(resObj2);
   3:2,
 
 }
+// */
+
+// Here is a problem and I want a optimized solution..
+
+
+// Input   [2,5,6,4,5]
+// O/p  [2,120,720,24,120]
+//  u need to get fact of each value from input 
+
+// Note - not just solution , it's must be optimized means best solution
+
+
+/*
+{2:2,
+5:120}
+2 = 2
+5 = 120 
+6  6*120
+4  4*3*2*1
+5: 120 
 */
+
+
